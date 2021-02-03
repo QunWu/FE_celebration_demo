@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0027)http://itzoo.info/love.html -->
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Happy New Year</title>
+
+  <link type="text/css" rel="stylesheet" href="./files/default.css">
+  <script type="text/javascript" src="./files/jquery.min.js"></script>
+  <script type="text/javascript" src="./files/jscex.min.js"></script>
+  <script type="text/javascript" src="./files/jscex-parser.js"></script>
+  <script type="text/javascript" src="./files/jscex-jit.js"></script>
+  <script type="text/javascript" src="./files/jscex-builderbase.min.js"></script>
+  <script type="text/javascript" src="./files/jscex-async.min.js"></script>
+  <script type="text/javascript" src="./files/jscex-async-powerpack.min.js"></script>
+  <script type="text/javascript" src="./files/functions.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./files/canvas-animation.js" charset="utf-8"></script>
+
+    </head>
+    <body>
+        <div id="main">
+            <div id="wrap">
+               <div id="text">
+                    <div id="code">
+                        <span class="say">新年快乐，咸鱼妹子。虽然已经是二月份，按照阳历，这份祝福仿佛晚了大半个世纪，但是念在传统的面子上，就别再计较了。</span>
+                        <span class="say">2020年让很多人都感觉束手无措，大概我也是这样。可又没什么不同，如果这是平常的一年，我的日子会有什么不一样吗？可能不会吧。我大概还是会每天上班，看书，在深夜来临前赶紧入睡。</span>
+                        <span class="say">我应该还算是个内心有热情的人，有追求，有想要的生活，并且延迟幸福的能力很强。但很长一段时间里，我都更倾向于平静，不想认识什么新人。经历了这么多，成长了这么多，地理上的距离，和心灵的成熟甚至扭曲，都让我们和熟知自己的人渐行渐远，却在旅途中不再迎来愿意了解我们的人。在失去了知道我屁股上有痣的人之后，连想了解我手心有痣的人都未再出现。</span>
+                        <span class="say">这并不是什么拽文或者自怜，这样略带悲感的描述，其实概括的却是人海里的大多数。</span>
+                        
+                        </br>
+                        <span class="say">《挪威的森林》里，绿子问渡边，为什么总是一个人，渡边回答道：</span>
+                        <span class="say">我不是喜欢孤独，只不过不想失望罢了</span>
+                        <span class="say">这样的答案，是否也精准地描述了某个时间里的你？</span>
+                        <span class="say">经历过失望，又在人前碍于表达，于是快乐和悲伤都自己一并吞下。不过，以生命的高度看待这些，就会多少有些宽慰。俗话说，三贫三富活到老。抛开贫穷富有的财富概念，这句话其实是说人要经得起几次大风大浪，之后才能活的安稳。如果我们心中还有波澜，那可能说明你我都还在风浪之间吧。</span>
+                        
+                        </br>
+                        <span class="say">这封信说是新年祝福，其实更像是表达一种感谢和勉励。平静的生活的一个侧面，就是孤独和无趣。但是遇见了你，至少让我对闲暇时间有了些期待。说说笑笑不只是当时快乐情绪的表现，也带来一种安稳的感觉，更坦然面对后面的沉寂和琐碎。</span>
+                        <span class="say">希望这段时间我也能带给你一些欢乐。那样不曾相见地遇见，无需预谋的默契，是否也能给你一种生活在前进，时运在逐渐扭转的幸福感。</span>
+                        <span class="say">如果答案是肯定的，那我希望，这样的日子还能继续...</span>
+                        
+                        <br>
+                        <span class="say"><span class="space"></span><span class="space"></span>就此搁笔，-- 吴群</span>
+                    </div>
+                </div>
+                <div id="clock-box">
+                    认识 <a>毒舌咸鱼妹子</a> 的
+                    <div id="clock"></div>
+                </div>
+                <canvas id="canvas" width="1100" height="680" onclick="autoPlay()"></canvas>
+            </div>
+
+        </div>
+
+        <div style="display:none;">
+          <!-- <audio controls> -->
+          <audio id="audio" controls loop>
+              <source src="Something_to_Say.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+    <script>
+      function autoPlay() {
+        var audioElement = document.getElementById('audio');
+        console.log(audioElement);
+        audioElement.play();
+      };
+    </script>
+    <script>
+    (function(){
+        var canvas = $('#canvas');
+
+        if (!canvas[0].getContext) {
+            $("#error").show();
+            return false;
+        }
+
+        var width = canvas.width();
+        var height = canvas.height();
+
+        canvas.attr("width", width);
+        canvas.attr("height", height);
+
+        var opts = {
+            seed: {
+                x: width / 2 - 20,
+                color: "rgb(190, 26, 37)",
+                scale: 2
+            },
+            branch: [
+                [535, 680, 570, 250, 500, 200, 30, 100, [
+                    [540, 500, 455, 417, 340, 400, 13, 100, [
+                        [450, 435, 434, 430, 394, 395, 2, 40]
+                    ]],
+                    [550, 445, 600, 356, 680, 345, 12, 100, [
+                        [578, 400, 648, 409, 661, 426, 3, 80]
+                    ]],
+                    [539, 281, 537, 248, 534, 217, 3, 40],
+                    [546, 397, 413, 247, 328, 244, 9, 80, [
+                        [427, 286, 383, 253, 371, 205, 2, 40],
+                        [498, 345, 435, 315, 395, 330, 4, 60]
+                    ]],
+                    [546, 357, 608, 252, 678, 221, 6, 100, [
+                        [590, 293, 646, 277, 648, 271, 2, 80]
+                    ]]
+                ]]
+            ],
+            bloom: {
+                num: 700,
+                width: 1080,
+                height: 650,
+            },
+            footer: {
+                width: 1200,
+                height: 5,
+                speed: 10,
+            }
+        }
+
+        var tree = new Tree(canvas[0], width, height, opts);
+        var seed = tree.seed;
+        var foot = tree.footer;
+        var hold = 1;
+
+        canvas.click(function(e) {
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            if (seed.hover(x, y)) {
+                hold = 0;
+                canvas.unbind("click");
+                canvas.unbind("mousemove");
+                canvas.removeClass('hand');
+            }
+        }).mousemove(function(e){
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            canvas.toggleClass('hand', seed.hover(x, y));
+        });
+
+        var seedAnimate = eval(Jscex.compile("async", function () {
+            seed.draw();
+            while (hold) {
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canScale()) {
+                seed.scale(0.95);
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canMove()) {
+                seed.move(0, 2);
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+        }));
+
+        var growAnimate = eval(Jscex.compile("async", function () {
+            do {
+                tree.grow();
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canGrow());
+        }));
+
+        var flowAnimate = eval(Jscex.compile("async", function () {
+            do {
+                tree.flower(2);
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canFlower());
+        }));
+
+        var moveAnimate = eval(Jscex.compile("async", function () {
+            tree.snapshot("p1", 240, 0, 610, 680);
+            while (tree.move("p1", 500, 0)) {
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+            foot.draw();
+            tree.snapshot("p2", 500, 0, 610, 680);
+
+            // 会有闪烁不得意这样做, (＞﹏＜)
+            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
+            canvas.css("background", "#ffe");
+            $await(Jscex.Async.sleep(300));
+            canvas.css("background", "none");
+        }));
+
+        var jumpAnimate = eval(Jscex.compile("async", function () {
+            var ctx = tree.ctx;
+            while (true) {
+                tree.ctx.clearRect(0, 0, width, height);
+                tree.jump();
+                foot.draw();
+                $await(Jscex.Async.sleep(25));
+            }
+        }));
+
+        var textAnimate = eval(Jscex.compile("async", function () {
+            var firstMeetTime = new Date(1609707660000);
+
+            $("#clock-box").fadeIn(500);
+            while (true) {
+                timeElapse(firstMeetTime);
+                $await(Jscex.Async.sleep(1000));
+            }
+        }));
+
+        var writingAnimate = eval(Jscex.compile("async", function () {
+            $("#code").show().typewriter();
+        }));
+
+        var runAsync = eval(Jscex.compile("async", function () {
+            $await(seedAnimate());
+            $await(growAnimate());
+            $await(flowAnimate());
+            $await(moveAnimate());
+
+            textAnimate().start();
+            writingAnimate().start();
+
+            $await(jumpAnimate());
+        }));
+
+        runAsync().start();
+    })();
+
+    </script>
+
+
+  </body>
+</html>
